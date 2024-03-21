@@ -50,7 +50,7 @@ def plot_max_clique(graph, max_clique):
 #find main k_core and print
 def make_k_core(graph):
     main_k_core = nx.k_core(graph)
-    print('Nodi nel main k-core:', main_k_core.nodes())
+    print('Nodi nel main k-core:', main_k_core.nodes(), len(main_k_core), main_k_core.degree)
 
     # Visualizzazione del main k-core
     plt.figure(figsize=(12,12))

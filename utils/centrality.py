@@ -10,7 +10,6 @@ def draw(G, pos, measures, measure_name = ''):
                                    node_color=list(measures.values()),
                                    nodelist=measures.keys())
     nodes.set_norm(mcolors.SymLogNorm(linthresh=0.01, linscale=1))
-    
     edges = nx.draw_networkx_edges(G, pos)
 
     plt.title(measure_name)
@@ -28,7 +27,6 @@ def heatmap(Graph, cent):
 def histogram(cent):
     sns.set_style("darkgrid")
     sns.displot(list(cent.values()),stat='density',kde=True)
-    # plt.xlim(0, 0.23)
 
 #make degree centrality
 def make_dc(Graph):

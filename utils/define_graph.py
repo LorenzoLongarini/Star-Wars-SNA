@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 def create_graphs(paths = ['../db/starwars-full-interactions.json',
         '../db/starwars-full-mentions.json']):
 
+    #load data
     for path in paths:
         with open(path, 'r') as f:
             if 'interactions' in path:
@@ -19,12 +20,12 @@ def create_graphs(paths = ['../db/starwars-full-interactions.json',
     G_interactions = nx.Graph()
     G_mentions = nx.Graph()
 
-    # add nodes
+    #add nodes
     for node in full_interactions['nodes']:
-        G_interactions.add_node(node['name'], scenes=node['value'], colour=node['colour'])
+        G_interactions.add_node(node['name'], value=node['value'], colour=node['colour'])
 
     for node in full_mentions['nodes']:
-        G_mentions.add_node(node['name'], scenes=node['value'])
+        G_mentions.add_node(node['name'], value=node['value'], colour=node['colour'])
 
 
     #add links
